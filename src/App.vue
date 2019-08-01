@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <tg-table :data="GroupData" bordered>
+      <tg-table-column attr="kkhgl" />
+      <tg-table-column attr="qy" />
+      <tg-table-column attr="nylx" />
+      <tg-table-column attr="scjc" />
+      <tg-table-column attr="dqz" />
+      <tg-table-column attr="tqz" />
+    </tg-table>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TgTable from './Table'
+import TgTableColumn from './TableColumn'
+import GroupData from './data/group'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  name: 'App',
+  components: { TgTable, TgTableColumn },
+  data() {
+    return {
+      GroupData
+    }
   }
 }
 </script>
